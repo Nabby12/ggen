@@ -32,7 +32,7 @@ ggen # default setting is '10 lowercase characters'.
 example:
 
 ```shell
-ggen -c 20 -n # 20 characters containing lowercase and numeric characters.
+ggen -c 20 -n # 20 characters containing lowercase and numeric.
 ```
 
 ## License
