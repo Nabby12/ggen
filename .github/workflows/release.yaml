@@ -1,0 +1,53 @@
+name: release
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_deploy:
+        required: true
+        type: boolean
+        description: forced deployment flag
+        default: false
+  pull_request:
+    paths:
+      - '!**.md'
+    branches: [main]
+    # types: [closed]
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  goreleaser:
+    name: build and release
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # if: ${{ github.event.pull_request.merged || github.event.inputs.force_deploy }}
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: git fetch --force --tags
+
+      - name: push git tags
+        run: |
+          TAG_NAME=$(/bin/bash ./scripts/tag.sh)
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
+
+      - name: setup Go
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '>=1.19.1'
+          cache: true
+
+      - name: release
+      - uses: goreleaser/goreleaser-action@v2
+        with:
+          distribution: goreleaser
+          version: latest
+          args: release --rm-dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
