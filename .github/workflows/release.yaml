@@ -50,4 +50,4 @@ jobs:
           version: latest
           args: release --rm-dist
         env:
-          GITHUB_TOKEN: ${{ secrets.APP_SECRET_KEY }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
