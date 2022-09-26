@@ -15,12 +15,7 @@ The options are like:
 
 ## Install
 
-<!-- download the binary from [link](release page) このへんもtestta参考にできるかな-->
 
-<!-- ```shell
-brew/tap
-brew
-``` -->
 
 ## Usage
 
