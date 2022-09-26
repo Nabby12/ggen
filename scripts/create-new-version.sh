@@ -1,6 +1,6 @@
 #!/bin/bash
 
-latestTag=$(git describe --abbrev=0 --tags 2>&1 > /dev/null)
+latestTag=$(git describe --abbrev=0 --tags 2>&1)
 
 if [[ "$latestTag" == *fatal* ]]; then
     echo "v0.0.0"

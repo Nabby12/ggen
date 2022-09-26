@@ -33,7 +33,7 @@ jobs:
       - name: push git tags
         run: |
           git fetch --force --tags
-          TAG_NAME=$(/bin/bash ./scripts/tag.sh)
+          TAG_NAME=$(/bin/bash ./scripts/create-new-version.sh)
           git tag $TAG_NAME
           git push origin $TAG_NAME
 
