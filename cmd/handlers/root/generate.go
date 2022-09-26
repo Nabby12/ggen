@@ -22,30 +22,30 @@ var letters = map[string]string{
 	keys["s"]: "!@#$%^&*",
 }
 
-func Generate(count int, noLower bool, numeric bool, symbol bool, upper bool) (string, error) {
+func Generate(count int, noLowercase bool, noNumeric bool, noSymbol bool, noUppercase bool) (string, error) {
 	if count == 0 {
 		return "", errors.New("word count ('-c' option) must be greater than '0'")
 	}
 
-	if noLower && !numeric && !symbol && !upper {
-		upper = true
+	if noLowercase && noNumeric && noSymbol && noUppercase {
+		return "", errors.New("the all types of 'no-xx' flags cannot be used at once.")
 	}
 
 	typeCount := 0
 	wordCount := map[string]int{}
-	if !noLower {
+	if !noLowercase {
 		typeCount++
 		wordCount[keys["l"]] = count
 	}
-	if numeric {
+	if !noNumeric {
 		typeCount++
 		wordCount[keys["n"]] = count
 	}
-	if symbol {
+	if !noSymbol {
 		typeCount++
 		wordCount[keys["s"]] = count
 	}
-	if upper {
+	if !noUppercase {
 		typeCount++
 		wordCount[keys["u"]] = count
 	}
