@@ -15,9 +15,7 @@ The options are like:
 
 ## Install
 
-```shell
-go get github.com/Nabby12/ggen
-```
+Download the latest version of the binary that matches your local environment from the [releases](https://github.com/Nabby12/ggen/releases).
 
 or
 
