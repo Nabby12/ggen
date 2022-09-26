@@ -9,8 +9,8 @@ on:
         description: forced deployment flag
         default: false
   pull_request:
-    paths:
-      - '!**.md'
+    paths-ignore:
+      - '**.md'
     branches: [main]
     # types: [closed]
 
