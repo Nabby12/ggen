@@ -15,7 +15,16 @@ The options are like:
 
 ## Install
 
+```shell
+go get github.com/Nabby12/ggen
+```
 
+or
+
+```shell
+brew tap Nabby12/ggen
+brew install Nabby12/ggen/ggen
+```
 
 ## Usage
 
