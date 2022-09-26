@@ -35,5 +35,5 @@ brews:
       name: homebrew-ggen
     folder: Formula
     homepage: 'https://github.com/Nabby12/ggen'
-    description: 'Generates the URL link in various formats'
-    license: "MIT"
+    description: 'ggen is a simple CLI tool via Golang.'
+    license: 'MIT'
