@@ -4,7 +4,7 @@ latestTag=$(git describe --abbrev=0 --tags)
 cmdStatus=$?
 
 if [ $cmdStatus -ne 0 ]; then
-    echo "v0.0.0"
+    echo "v0.0.1"
     exit 0
 fi
 
