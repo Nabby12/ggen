@@ -33,7 +33,7 @@ brews:
   - tap:
       owner: Nabby12
       name: homebrew-ggen
-      token: "{{ .Env.ACCESS_TOKEN }}"
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
     folder: Formula
     homepage: 'https://github.com/Nabby12/ggen'
     description: 'ggen is a simple CLI tool via Golang.'
