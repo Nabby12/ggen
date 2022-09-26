@@ -23,16 +23,17 @@ ggen # default setting is '10 lowercase characters'.
 
 ### options
 
-- `-c`, `--count [int]`    # generated password word count (default 20)
-- `""`, `--no-lowercase`   # not contain lowercase letters
-- `-n`, `--numeric`        # contain numbers
-- `-s`, `--symbol`         # contain symbols
-- `-u`, `--uppercase`      # contain uppercase letters
+- `-c`, `--count [int]`    # specify the number of characters (default 30)
+- `""`, `--no-lowercase`   # not contain lowercase character
+- `""`, `--no-numeric`     # not contain numeric character
+- `""`, `--no-symbol`      # not contain symbol character
+- `""`, `--no-uppercase`   # nto contain uppercase character
 
 example:
 
 ```shell
-ggen -c 30 -n # 30 characters containing lowercase and numeric.
+ggen                   # 30 characters containing lowercase, uppercase, numeric and symbol.
+ggen -c 15 --no-symbol # 15 characters not containing symbol.
 ```
 
 ## License
