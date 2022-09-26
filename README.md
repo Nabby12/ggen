@@ -8,17 +8,30 @@ You can select some options for generating passwords.
 
 The options are like:
 
-- specifing the count
+- specifing the number of characters
 - containing lowercase / uppercase characters or not
 - containing numeric characters or not
-- containing symbol or not
+- containing symbol characters or not
+
+## Install
+
+```shell
+go get github.com/Nabby12/ggen
+```
+
+or
+
+```shell
+brew tap Nabby12/ggen
+brew install Nabby12/ggen/ggen
+```
 
 ## Usage
 
 Run one simple command below:
 
 ```shell
-ggen # default setting is '10 lowercase characters'.
+ggen # default setting is '30 characters containing lowercase, uppercase, numeric and symbol'.
 ```
 
 ### options
@@ -29,7 +42,7 @@ ggen # default setting is '10 lowercase characters'.
 - `""`, `--no-symbol`      # not contain symbol character
 - `""`, `--no-uppercase`   # nto contain uppercase character
 
-example:
+### example
 
 ```shell
 ggen                   # 30 characters containing lowercase, uppercase, numeric and symbol.

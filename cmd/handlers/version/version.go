@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	version string
+	Version string = "x.x.x"
 )
 
 func NewVersionCommand() *cobra.Command {
@@ -16,10 +16,7 @@ func NewVersionCommand() *cobra.Command {
 		Short: "Show the version of ggen",
 		Long:  `This command shows ggen's current version.`,
 		Run: func(versionCmd *cobra.Command, args []string) {
-			if version == "" {
-				version = "x.x.x"
-			}
-			fmt.Printf("ggen version ==> %v\n", version)
+			fmt.Printf("ggen version ==> %v\n", Version)
 		},
 	}
 
