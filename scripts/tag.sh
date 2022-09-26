@@ -4,7 +4,7 @@ latestTag=$(git describe --abbrev=0 --tags 2>&1 > /dev/null)
 
 if [[ "$latestTag" == *fatal* ]]; then
     echo "v0.0.0"
-    return 0
+    exit 0
 fi
 
 latestTag=$(echo ${latestTag} | awk '{print substr($0, 2)}')
