@@ -21,7 +21,9 @@ THE SOFTWARE.
 */
 package main
 
-import "github.com/Nabby12/ggen/cmd"
+import (
+	"github.com/Nabby12/ggen/cmd"
+)
 
 func main() {
 	cmd.Execute()
